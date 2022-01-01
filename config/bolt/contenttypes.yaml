@@ -24,9 +24,17 @@ homepage:
         introduction:
             type: redactor
             localize: true
+        blog_title:
+            type: text
+            label: Titre du blog
+            group: Parametres blog
+        blog_sub_title:
+            type: text
+            label: Sous-titre du blog
         content:
             type: redactor
             localize: true
+            group: Autres
         contentlink:
             type: text
             label: Link
@@ -98,7 +106,11 @@ Blog:
     fields:
         title: 
             type: text
+            label: Titre
         image:
             type: image
-        description:
+        content:
             type: redactor
+            label: Contenu
+        slug:
+            type: slug
