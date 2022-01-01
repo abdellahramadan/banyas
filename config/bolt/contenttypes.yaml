@@ -75,8 +75,11 @@ Global:
     fields:
         sitename:
             type: text
+            group: 'A propos du site'
         logo:
             type: image
+        about:
+            type: redactor
         contact:
             type: collection
             fields:
@@ -86,3 +89,16 @@ Global:
                     type: email
                 lieu:
                     type: text
+
+Blog:
+    name: Blog
+    singular_name: Blog
+    record_template: blogitem.twig
+    listing_template: blog.twig
+    fields:
+        title: 
+            type: text
+        image:
+            type: image
+        description:
+            type: redactor

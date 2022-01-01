@@ -24,4 +24,12 @@ main:
     class: bolt-site
     title: Visit the excellent Bolt website!
 
-foo: bar
+footer1: 
+    - label: Home
+      title: Footer
+      link: /
+
+footer2:
+    - label: Home
+      title: Footer
+      link: /
