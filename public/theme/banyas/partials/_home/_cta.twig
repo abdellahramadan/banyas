@@ -5,13 +5,14 @@
             <div class="col-lg-8 col-md-12">
                 <div class="cta-content">
                     <h3>Call Us Now For Connect Bahama</h3>
-                    <a href="#">+7(887) 332 43 43</a>
+                    {% set phone = global.contact|filter(f => f.name == 'phone')|first %}
+                    <a href="tel:{{ phone }}">{{ phone }}</a>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-12">
                 <div class="cta-btn">
-                    <a href="#" class="btn btn-primary">Check Coverage in Your Area</a>
+                    {#<a href="#" class="btn btn-primary">Check Coverage in Your Area</a>#}
                 </div>
             </div>
         </div>

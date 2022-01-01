@@ -1,4 +1,6 @@
 <!-- Start Services Area -->
+{% setcontent services = 'services' %}
+{% if services is not empty %}
 <section class="services-area bg-image ptb-100">
     <div class="container">
         <div class="section-title">
@@ -7,96 +9,31 @@
                             <i class="flaticon-technical-support"></i>
                         </span>
 
-                        <span>Bahama Services</span>
+                        <span>Services {{ config.get('general/sitename') }}</span>
                     </span>
-            <h2>Explore the next Isp unlimited possibilities</h2>
+            <h2>{{ homepage.services_subtitle }}</h2>
         </div>
 
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-services-box">
-                    <div class="icon">
-                        <i class="flaticon-router"></i>
+            {% for service in services %}
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-services-box">
+                        <div class="icon">
+                            <i class="flaticon-router"></i>
+                        </div>
+
+                        <h3>{{ service.title }}</h3>
+
+                        <p>{{ service.content|excerpt(50) }}</p>
+
+                        <a href="{{ service|link }}" class="read-more-btn">Découvrir... <i class="flaticon-arrow-pointing-to-right"></i></a>
                     </div>
-
-                    <h3>Home Broadband</h3>
-
-                    <p>Lorem ipsudolorsitamet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-
-                    <a href="#" class="read-more-btn">Read More <i class="flaticon-arrow-pointing-to-right"></i></a>
                 </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-services-box">
-                    <div class="icon">
-                        <i class="flaticon-wifi-1"></i>
-                    </div>
-
-                    <h3>Home WIFI</h3>
-
-                    <p>Lorem ipsudolorsitamet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-
-                    <a href="#" class="read-more-btn">Read More <i class="flaticon-arrow-pointing-to-right"></i></a>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-services-box">
-                    <div class="icon">
-                        <i class="flaticon-wifi-signal-tower"></i>
-                    </div>
-
-                    <h3>Satellite TV</h3>
-
-                    <p>Lorem ipsudolorsitamet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-
-                    <a href="#" class="read-more-btn">Read More <i class="flaticon-arrow-pointing-to-right"></i></a>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-services-box">
-                    <div class="icon">
-                        <i class="flaticon-online-shop"></i>
-                    </div>
-
-                    <h3>Nexa TV Box</h3>
-
-                    <p>Lorem ipsudolorsitamet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-
-                    <a href="#" class="read-more-btn">Read More <i class="flaticon-arrow-pointing-to-right"></i></a>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-services-box">
-                    <div class="icon">
-                        <i class="flaticon-key"></i>
-                    </div>
-
-                    <h3>Mobile Connection</h3>
-
-                    <p>Lorem ipsudolorsitamet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-
-                    <a href="#" class="read-more-btn">Read More <i class="flaticon-arrow-pointing-to-right"></i></a>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-services-box">
-                    <div class="icon">
-                        <i class="flaticon-shield"></i>
-                    </div>
-
-                    <h3>Home Security</h3>
-
-                    <p>Lorem ipsudolorsitamet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-
-                    <a href="#" class="read-more-btn">Read More <i class="flaticon-arrow-pointing-to-right"></i></a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
+{% else %}
+    <h2>Pas de service disponible</h2>
+{% endif %}
 <!-- End Services Area -->
