@@ -1,0 +1,47 @@
+{% macro display_menu_item(item, loop) %}
+
+    {% if item.submenu %}
+        {% set class = 'navbar-link' %}
+        <div class="navbar-item has-dropdown is-hoverable">
+    {% else %}
+        {% set class = 'navbar-item' %}
+    {% endif %}
+
+    <a href='{{ item.link }}' {% if item.title is defined %}title='{{ item.title|escape }}'{% endif %}
+       class='{{ class }} {% if item|current %}current {% endif %}{% if item.class is defined %}{{item.class}}{% endif %} index-{{ loop.index }}{% if loop.first %} first{% endif %}{% if loop.last %} last{% endif %}'>
+        {{ item.label|default(item.title) }}
+    </a>
+
+    {% if item.submenu %}
+        <div class="navbar-dropdown">
+            {% for submenu in item.submenu %}
+                {{ _self.display_menu_item(submenu, loop) }}
+            {% endfor %}
+        </div>
+
+        </div>
+    {% endif %}
+
+{% endmacro %}
+{% setcontent global = 'global' %}
+<nav class="navbar navbar-expand-md navbar-light">
+    <a class="navbar-brand" href="{{ path('homepage') }}">
+        <img src="{{ global.logo }}" alt="logo">
+    </a>
+    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+        {% for item in menu %}
+            <li class="nav-item">
+                <a href="{{ item.link }}" class="nav-link {% if item.link is same as(app.request.requesturi) %} active {% endif %}">{{ item.label}} <i class="fas fa-chevron-down"></i></a>
+                {% if item.submenu %}
+                    <ul class="dropdown-menu">
+                    {% for submenu in item.submenu %}
+                        <li class="nav-item"><a href="{{ submenu.link }}" class="nav-link {% if submenu.link === app.request.uri %} active {% endif %}">{{ submenu.label }}</a></li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</nav>

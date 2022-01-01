@@ -15,7 +15,11 @@
 <body>
 
 </body>
+    {% setcontent global = 'global' %}
+
     {% include 'partials/_header.twig' %}
+
     {% block content %} {% endblock %}
+
     {% include 'partials/_footer.twig' %}
 </html>
