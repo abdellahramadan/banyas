@@ -49,17 +49,23 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-footer-widget">
-                    <h3>Get In Touch</h3>
-
-                    <div class="widget-contact-info">
-                        <p>
-                            <a href="#">1 (800) 216 20 20</a>
-                            <span>(Customer service and support)</span>
-                            <a href="#">1 (800) 216 20 20</a>
-                            <span>(For new customers)</span>
-                            1600 Harrison ave, office 203 New York, NY 309090
-                        </p>
-                    </div>
+                    <h3>Contacts</h3>
+                    {% if global is not empty %}
+                        {% if global.contact is not empty %}
+                            {% set email = global.contact|filter(f => f.name == 'email')|first %}
+                            {% set phone = global.contact|filter(f => f.name == 'phone')|first %}
+                            {% set lieu = global.contact|filter(f => f.name == 'lieu')|first %}
+                                <div class="widget-contact-info">
+                                    <p>
+                                        <a href="tel:{{ phone }}">{{ phone }}</a>
+                                        <span>(Service client et support)</span>
+                                        <a href="mailto:{{ email }}">{{ email }}</a>
+                                        <span>(Email)</span>
+                                        {{ lieu }}
+                                    </p>
+                                </div>
+                            {% endif %}
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -67,7 +73,7 @@
 
     <div class="copyright-area">
         <div class="container">
-            <p><i class="far fa-copyright"></i> Copyright Bahama 2021 All Rights Reserved</p>
+            <p><i class="far fa-copyright"></i> Copyright {{ config.get('general/sitename') }} {{ 'now'|date('Y') }} All Rights Reserved</p>
         </div>
     </div>
 </footer>
