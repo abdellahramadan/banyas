@@ -1,0 +1,53 @@
+{% extends 'partials/_master.twig' %}
+
+{% setcontent homepage = 'homepage' %}
+
+{% block content %}
+
+    {% include 'partials/_page-title.twig' with {'title': 'Services'} %}
+
+    <!-- Start Services Area -->
+    <section class="services-area ptb-100">
+        <div class="container">
+            <div class="section-title">
+                    <span>
+                        <span class="icon">
+                            <i class="flaticon-technical-support"></i>
+                        </span>
+
+                        <span>{{ config.get('general/sitename')}} Services</span>
+                    </span>
+                <h2>{{ homepage.services_subtitle }}</h2>
+            </div>
+    {% if services is not empty %}
+            <div class="row">
+                {% for service in services %}
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="services-box">
+                            <div class="icon">
+                                <i class="flaticon-router"></i>
+                            </div>
+
+                            <h3>{{ service.title }}</h3>
+
+                            <p>{{ service.content|excerpt(50) }}</p>
+
+                            <a href="{{ service|link }}" class="details-btn"><i class="flaticon-arrow-pointing-to-right"></i></a>
+
+                            <div class="image-box">
+                                <img src="theme/banyas/img/shape-image/1.png" alt="image">
+                                <img src="theme/banyas/img/shape-image/1.png" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+    {% else %}
+        <h2>Oups c'est vide</h2>
+    {% endif %}
+        </div>
+    </section>
+    <!-- End Services Area -->
+
+{% endblock %}
+

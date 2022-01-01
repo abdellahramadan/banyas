@@ -31,6 +31,11 @@ homepage:
         blog_sub_title:
             type: text
             label: Sous-titre du blog
+        services_title:
+            type: text
+            group: 'Services'
+        services_subtitle:
+            type: text
         content:
             type: redactor
             localize: true
@@ -107,6 +112,22 @@ Blog:
         title: 
             type: text
             label: Titre
+        image:
+            type: image
+        content:
+            type: redactor
+            label: Contenu
+        slug:
+            type: slug
+
+# Services
+Services:
+    name: Services
+    singular_name: Service
+    fields:
+        title:
+            type: text
+            label: Title
         image:
             type: image
         content:

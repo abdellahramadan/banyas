@@ -1,0 +1,46 @@
+{% extends 'partials/_master.twig' %}
+
+{% setcontent services = 'services' %}
+{% block content %}
+    {% include 'partials/_page-title.twig' with {'title': service.title} %}
+    <!-- Start Services Details Area -->
+    <section class="services-details-area ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12">
+                    <div class="services-details">
+                        <img src="{{ service.image }}" alt="image">
+
+                        <div class="services-details-desc">
+                            <h3>{{ service.title }}</h3>
+
+                            <p>{{ service.content }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <div class="services-sidebar">
+                        <div class="services-list">
+                            <ul>
+                                {% for service in services %}
+                                <li><a href="{{ service|link }}" class="active">{{ service.title}} <i class="flaticon-arrow-pointing-to-right"></i></a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        {#
+                        <div class="services-download-list">
+                            <ul>
+                                <li><a href="#"><i class="flaticon-pdf"></i> Download Pdf File</a></li>
+                                <li><a href="#"><i class="flaticon-txt"></i> Download Txt File</a></li>
+                            </ul>
+                        </div>
+                        #}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services Details Area -->
+{% endblock %}
