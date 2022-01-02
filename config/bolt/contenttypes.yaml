@@ -115,7 +115,7 @@ Blog:
         image:
             type: image
         content:
-            type: redactor
+            type: article
             label: Contenu
         slug:
             type: slug
@@ -135,3 +135,23 @@ Services:
             label: Contenu
         slug:
             type: slug
+
+# Products
+Articles:
+    name: Articles
+    singular_name: Article
+    fields:
+        name:
+            type: text
+        description:
+            type: redactor
+        short_description:
+            type: redactor
+        image:
+            type: image
+        regular_price:
+            type: number
+        current_price:
+            type: number
+        currency:
+            type: text

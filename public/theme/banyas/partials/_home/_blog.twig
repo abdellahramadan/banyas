@@ -4,13 +4,13 @@
 <section class="blog-area ptb-100">
     <div class="container">
         <div class="section-title">
-                    <span>
-                        <span class="icon">
-                            <i class="flaticon-wifi-1"></i>
-                        </span>
+            <span>
+                <span class="icon">
+                    <i class="flaticon-wifi-1"></i>
+                </span>
 
-                        <span>{{ homepage.blog_sub_title }}</span>
-                    </span>
+                <span>{{ homepage.blog_sub_title }}</span>
+            </span>
             <h2>{{ homepage.blog_title }}</h2>
         </div>
 
@@ -38,6 +38,12 @@
     </div>
 </section>
 {% else %}
-    <h2>Le blog est actuellement vide</h2>
+<section class="blog-area ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <h2>Le blog est actuellement vide</h2>
+        </div>
+    </div>
+</section>
 {% endif %}
 <!-- End Blog Area -->
