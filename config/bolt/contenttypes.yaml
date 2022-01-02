@@ -24,6 +24,21 @@ homepage:
         introduction:
             type: redactor
             localize: true
+        apropos:
+            type: text
+            placeholder: 'A propos de nous titre'
+            group: 'A propos'
+        apropos_description:
+            type: redactor
+            label: 'A propos de nous'
+        apropos_tagline:
+            type: text
+        apropos_image:
+            type: image
+        button_text:
+            type: text
+        button_url:
+            type: text
         blog_title:
             type: text
             label: Titre du blog
