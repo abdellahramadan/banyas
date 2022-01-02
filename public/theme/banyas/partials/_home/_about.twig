@@ -4,17 +4,17 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12">
                 <div class="about-content">
-                    <span class="sub-title"><i class="flaticon-care-about-environment"></i> About Bahama</span>
-                    <h2>Experience the magic of tech to serve you a best</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisseLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+                    <span class="sub-title"><i class="flaticon-care-about-environment"></i> {{ homepage.apropos_tagline }}</span>
+                    <h2>{{ homepage.apopos }}</h2>
+                    <p>{{ homepage.apropos_description }}</p>
 
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a href="{{ homepage.button_url }}" class="btn btn-primary">{{ homepage.button_text }}</a>
                 </div>
             </div>
 
             <div class="col-lg-6 col-md-12">
                 <div class="about-image">
-                    <img src="assets/img/about-img1.png" alt="image">
+                    <img src="{{ homepage.apropos_image|thumbnail(570,415) }}" alt="{{ config.get('general/sitename') }}">
                 </div>
             </div>
         </div>
