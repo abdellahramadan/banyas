@@ -65,6 +65,9 @@ homepage:
             type: slug
             uses: title
             group: Meta
+        seo:
+            type: seo
+            group: "Détails SEO"
     viewless: false
     taxonomy: [ categories, tags, foobars ]
     locales: ['en', 'nl', 'pt_BR', 'es']
@@ -134,6 +137,9 @@ Blog:
             label: Contenu
         slug:
             type: slug
+        seo:
+            type: seo
+            group: "Détails SEO"
 
 # Services
 Services:
@@ -150,6 +156,9 @@ Services:
             label: Contenu
         slug:
             type: slug
+        seo:
+            type: seo
+            group: "Détails SEO"
 
 # Products
 Articles:
@@ -170,3 +179,19 @@ Articles:
             type: number
         currency:
             type: text
+        seo:
+            type: seo
+            group: "Détails SEO"
+
+# Faqs
+Faqs: 
+    name: Faqs
+    singular_name: Faq
+    viewless: true
+    viewless_listing: false
+    fields:
+        question:
+            type: text
+        answer:
+            type: redactor
+            label: Réponse

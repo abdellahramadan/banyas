@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d1bffa7f7982ca019320807394f8c38",
+    "content-hash": "71a262737e63675843b49e17b3718a3b",
     "packages": [
         {
             "name": "api-platform/core",
@@ -165,6 +165,57 @@
                 }
             ],
             "time": "2021-09-29T19:11:04+00:00"
+        },
+        {
+            "name": "appolodev/bolt-seo",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AppoloDev/bolt-seo.git",
+                "reference": "4aad5ae17fb5355e4d27d9cfe66fd15662b4a74a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AppoloDev/bolt-seo/zipball/4aad5ae17fb5355e4d27d9cfe66fd15662b4a74a",
+                "reference": "4aad5ae17fb5355e4d27d9cfe66fd15662b4a74a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "twig/twig": "^2.12 | ^3.0"
+            },
+            "require-dev": {
+                "bolt/core": "^4.0.0",
+                "migrify/config-transformer": "^0.4.2",
+                "phpstan/phpstan": "^0.12.32",
+                "phpstan/phpstan-symfony": "^0.12.6",
+                "symplify/easy-coding-standard": "^8.1"
+            },
+            "type": "bolt-extension",
+            "extra": {
+                "entrypoint": "Appolo\\BoltSeo\\Extension"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Appolo\\BoltSeo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "AppoloDev",
+                    "email": "contact@appolo.fr"
+                }
+            ],
+            "description": "Bolt 4 - Seo extension",
+            "support": {
+                "issues": "https://github.com/AppoloDev/bolt-seo/issues",
+                "source": "https://github.com/AppoloDev/bolt-seo/tree/1.0.3"
+            },
+            "time": "2021-02-23T15:20:12+00:00"
         },
         {
             "name": "babdev/pagerfanta-bundle",
@@ -13411,8 +13462,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2.9 || ^8.0"
+        "php": "^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
